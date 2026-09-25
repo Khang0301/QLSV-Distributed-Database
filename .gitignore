@@ -1,8 +1,7 @@
-@'
 # Dependencies
 node_modules/
 
-# Environment variables
+# Environment variables and secrets
 .env
 .env.*
 !.env.example
@@ -29,9 +28,8 @@ Thumbs.db
 *.tmp
 *.temp
 
-# Local database / backup files
+# Local database and backup files
 *.bak
 *.mdf
 *.ndf
 *.ldf
-'@ | Set-Content -Encoding UTF8 .gitignore

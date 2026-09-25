@@ -43,3 +43,11 @@ database/
 app-site1/
 app-site2/
 ```
+
+## Key documentation
+
+- [Database design](docs/database-design.md): QLSV schema, assumptions, constraints, and fragment tables.
+- [Predicates](docs/predicates.md), [COM_MIN](docs/com-min.md), [minterms](docs/minterms.md), and [fragmentation](docs/fragmentation.md): design derivation and verification.
+- [Fragment allocation](docs/allocation.md): target site assignment and migration order.
+- [Linked Server](docs/linked-server.md): network preparation, setup, query, and failure checks.
+- [Database environment](docs/database-environment.md): machine and SQL Server settings.
