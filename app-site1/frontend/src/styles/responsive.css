@@ -1,0 +1,102 @@
+/* Responsive refinements, kept separate from the shared visual theme. */
+@media (max-width: 1100px) {
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .content { padding-inline: 24px; }
+}
+
+@media (max-width: 760px) {
+  .shell { align-items: stretch; }
+  .sidebar {
+    position: sticky;
+    top: 0;
+    height: 100dvh;
+    width: 64px;
+    padding: 14px 7px 10px;
+    overflow: hidden;
+  }
+  .brand { justify-content: center; padding: 0; margin-bottom: 17px; }
+  .brand > span:nth-child(2), .collapse,
+  .site-switch > span:nth-child(2), .site-switch > .dot,
+  .sidebar nav section > p, .new-tag,
+  .sidebar-bottom .phase, .user > div, .dots { display: none; }
+  .site-switch {
+    height: 38px;
+    justify-content: center;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    margin-bottom: 13px;
+  }
+  .db-icon { width: 34px; height: 34px; }
+  .sidebar nav { flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; }
+  .sidebar nav section { margin-bottom: 8px; }
+  .nav-link, .nav-link:not(.selected) {
+    display: flex;
+    justify-content: center;
+    width: 44px;
+    height: 42px;
+    margin: 3px auto;
+    padding: 0;
+    font-size: 0;
+  }
+  .nav-label { display: none; }
+  .nav-icon { font-size: 18px; width: auto; }
+  .sidebar-bottom { margin-top: 8px; }
+  .user { justify-content: center; padding: 10px 0 0; }
+  .topbar { height: 54px; padding-inline: 13px; }
+  .top-right { gap: 10px; }
+  .environment { width: 28px; padding: 0; justify-content: center; font-size: 0; }
+  .environment .dot { width: 8px; height: 8px; }
+  .content { padding: 19px 13px 22px; }
+  .heading { align-items: flex-start; flex-direction: column; margin-bottom: 16px; }
+  .heading h1 { font-size: 21px; }
+  .heading .light-button { display: none; }
+  .status-grid { grid-template-columns: 1fr; gap: 8px; }
+  .status-card { min-height: 66px; padding: 10px; }
+  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .metric { min-height: 99px; padding: 9px; }
+  .metric > small { font-size: 7px; }
+  .metric > b { font-size: 19px; }
+  .dashboard-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .allocation, .progress, .recent { min-width: 0; padding: 12px; }
+  .allocation-head { gap: 6px; }
+  .allocation-head > div b { font-size: 8px; }
+  .allocation-head > div small { font-size: 7px; }
+  .pill { font-size: 6px; padding: 4px; }
+  .fragment-pills { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .fragment-pills > div > small { padding-right: 14px; line-height: 1.35; }
+  .connector span { width: 28px; }
+  .panel-heading { gap: 7px; }
+  .panel-heading h2 { font-size: 12px; }
+  .panel-heading p { font-size: 8px; }
+  .panel-heading .link-button { font-size: 8px; }
+  .table-scroll { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { min-width: 660px; }
+  .toolbar { flex-wrap: wrap; }
+  .toolbar input { width: 100%; }
+  .toolbar .light-button { margin-left: auto; }
+  .fragment-grid, .three-cards { grid-template-columns: minmax(0, 1fr); }
+  .minterm { grid-template-columns: 27px minmax(98px, 130px) minmax(0, 1fr) 25px; gap: 5px; font-size: 8px; }
+  .minterm code { max-width: 100%; overflow-x: auto; font-size: 7px; }
+  .query-panel { min-width: 0; padding: 13px; }
+  .query-panel pre { max-width: 100%; padding: 11px; font-size: 9px; white-space: pre; }
+  .query-bottom { align-items: flex-start; gap: 8px; flex-direction: column; }
+  footer { min-height: 34px; height: auto; gap: 8px; padding: 8px 12px; font-size: 7px; }
+  footer > span:last-child { text-align: right; }
+}
+
+@media (max-width: 420px) {
+  .sidebar { width: 56px; padding-inline: 5px; }
+  .nav-link, .nav-link:not(.selected) { width: 42px; height: 40px; }
+  .content { padding-inline: 10px; }
+  .top-right { gap: 7px; }
+  .crumb { font-size: 10px; }
+  .status-card > div small { font-size: 7px; }
+  .status-card > div b { font-size: 10px; }
+  .status-card > div span { font-size: 8px; }
+  .metric > span:not(.metric-icon) { max-width: 90%; font-size: 8px; }
+  .allocation, .progress, .recent { padding: 10px; }
+  .allocation-head > div { overflow: hidden; }
+  .allocation-head > div b, .allocation-head > div small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 112px; }
+  .note { align-items: flex-start; line-height: 1.45; }
+}
