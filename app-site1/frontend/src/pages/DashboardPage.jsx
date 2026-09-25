@@ -3,7 +3,7 @@ import MetricCard from '../components/MetricCard.jsx';
 import PhaseRow from '../components/PhaseRow.jsx';
 import StatusCard from '../components/StatusCard.jsx';
 import StudentTable from '../components/StudentTable.jsx';
-import { students } from '../data/students.js';
+import { studentRows } from '../data/students.js';
 
 export default function DashboardPage({ onNavigate }) {
   return <>
@@ -38,7 +38,7 @@ export default function DashboardPage({ onNavigate }) {
     </div>
     <section className="panel recent">
       <div className="panel-heading"><div><h2>Sinh viên gần đây</h2><p>Một vài bản ghi từ QLSV_SITE1</p></div><button className="link-button" onClick={() => onNavigate('students')}>Tất cả sinh viên ↗</button></div>
-      <StudentTable rows={students} compact />
+      <StudentTable rows={studentRows.slice(0, 5)} compact />
     </section>
   </>;
 }

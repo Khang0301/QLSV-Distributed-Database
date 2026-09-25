@@ -5,7 +5,9 @@ request before the Site 2 allocation setup. It is not the production frontend
 integration phase.
 
 It includes navigation for Dashboard, Students, Simple Predicates, COM_MIN,
-Minterms, Fragments, Local Query, Distributed Query, and Database Status.
+Minterms, Fragments, Local Query, Distributed Query, and Database Status. The
+student-management page uses the QLSV schema fields MA, HT, QQ, NS, GT, DT, TB,
+with 60 deterministic sample records mirroring the Site 1 seed data.
 The dashboard represents the known project state: Site 1 is online; Site 2 is
 being prepared; Linked Server is not configured.
 
@@ -13,22 +15,27 @@ being prepared; Linked Server is not configured.
 
 ```text
 app-site1/frontend/src/
-├── components/      Reusable cards, headings, and student table
+├── components/      Shared UI controls and focused student components
 ├── data/            Prototype student rows and navigation metadata
 ├── layouts/         Sidebar and top navigation bar
-├── pages/           Dashboard, students, and other prototype pages
-├── styles/          Responsive breakpoint overrides
+├── lib/             Shared class-name utilities
+├── pages/           Dashboard, student management, and prototype pages
+├── styles/          Tailwind entry point and responsive page styles
 ├── App.jsx          Page state and top-level composition
 ├── main.jsx         React entry point and stylesheet imports
 └── styles.css       Shared visual theme
 ```
 
-The responsive rules live in styles/responsive.css so viewport adjustments
-can be changed without editing the shared theme. The sidebar becomes a
-scrollable icon rail on small screens; table contents remain horizontally
-scrollable, and dashboard cards stack on narrow viewports.
+The responsive student-management styles live in styles/students.css, with
+shared responsive rules in styles/responsive.css. On small screens the sidebar
+becomes an off-canvas menu, the student table scrolls horizontally, and the
+filters and summary cards rearrange for narrow viewports. Tailwind CSS 4 is
+configured through the Vite plugin; Lucide supplies icons and Sonner supplies
+action feedback.
 
-All displayed student rows and query interactions are static prototype data.
+Student search, filters, sorting, paging, detail view, CSV export, and
+add/edit/delete interactions run against in-browser prototype data. Changes
+made through add/edit/delete are not persisted and reset when the page reloads.
 The interface does not connect to Express, SQL Server, or a Linked Server.
 The query pages describe the intended SQL Server behavior but do not execute
 SQL. Connect the UI to the backend after database allocation and distributed

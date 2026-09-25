@@ -6,6 +6,7 @@ export const navigation = [
 ];
 
 export const pageDescriptions = {
+  students: 'Tìm kiếm, lọc và quản lý hồ sơ sinh viên theo schema QLSV.',
   predicates: 'Điều kiện truy vấn ứng viên từ workload giả định.',
   'com-min': 'Tập predicate đầy đủ và tối thiểu theo workload demo.',
   minterms: 'Bốn vị từ hội sơ cấp tạo từ p1 và p2.',
